@@ -118,7 +118,7 @@ def generate_master_report(json_path):
             if step["screenshot"]:
                 html += f'''
                 <img class="img-preview"
-                     src="/screenshots/{step["screenshot"]}"
+                     src="../screenshots/{step["screenshot"]}"
                      onclick="openModal(this.src)">
                 '''
         html += "</div>"
