@@ -1,6 +1,6 @@
 # tekus_test
 
-Plantilla para proyectos de automatizacion web con **Selenium + pytest + Page Object Model**.
+Automatizacion web con **Selenium + pytest + Page Object Model**.
 
 ## Estructura
 
@@ -10,10 +10,11 @@ tekus_test/
 │   └── config.py          # URL, timeouts, credenciales
 ├── pages/
 │   ├── base_page.py       # Clase base con metodos comunes
-│   ├── home_page.py       # Page Object: pagina principal
+│   ├── multimedia_page.py       # Page Object: pagina principal
 │   └── login_page.py      # Page Object: pagina de login
 ├── test/
-│   └── test_login.py      # Tests de ejemplo
+│   └── test_login.py      
+│   └── test_multimedia.py      
 ├── utils/
 │   ├── evidence_builder.py    # Recolector de evidencia JSON
 │   ├── html_master_report.py  # Generador de reporte HTML
