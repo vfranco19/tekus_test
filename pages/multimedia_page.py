@@ -1,24 +1,18 @@
 from selenium.webdriver.common.by import By
 from pages.base_page import BasePage
 
-class HomePage(BasePage):
+class MultimediaPage(BasePage):
     """Page Object de la pagina principal.
 
     Modifica los localizadores segun tu aplicacion.
     """
 
     # ── Localizadores ─────────────────────────────────────────────────
-    NAV_LOGIN = (By.XPATH, "//a[@href='/login']")
-    NAV_CONTACT = (By.XPATH, "//a[@href='/contact_us']")
-    LOGO = (By.XPATH, "//div[@class='col ark-form-login-logo-content']")
-
+    NAV_MULTIMEDIA = (By.XPATH, "//a[@href='/screens/multimedia']/parent::div")
+    TITLE = (By.XPATH, "//h1[text()='Multimedia']")
+    ELEMENTS = (By.XPATH, "//div[@class='ark-card ark-card-multimedia']")
+    ELEMENTS_ID = (By.XPATH, "//span[@class='ark-card-content-id'][1]")
+    ELEMENTS_WEIGHT = (By.XPATH, "//span[@class='ark-size-file'][1]")
+    ELEMENTS_DESCRIPTION = (By.XPATH, "//a[contains(@class,'ark-card-title')][1]")
+    ELEMENTS_PREVIEW = (By.XPATH, "//img[@class='ark-img-preview img-fluid'][1]")
     # ── Acciones ──────────────────────────────────────────────────────
-
-    def go_to_login(self):
-        self.safe_click(self.NAV_LOGIN)
-
-    def go_to_contact(self):
-        self.safe_click(self.NAV_CONTACT)
-
-    def is_logo_visible(self):
-        return self.is_element_visible(self.LOGO)

@@ -62,6 +62,11 @@ class BasePage:
         element = self.wait_for_element(locator)
         return element.text
 
+    def get_src(self, locator):
+        """Retorna el atributo src de un elemento."""
+        element = self.wait_for_element(locator)
+        return element.get_attribute("src")
+
     # ── Overlays / Ads (opcional) ─────────────────────────────────────
 
     def remove_overlays(self):
