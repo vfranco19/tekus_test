@@ -2,10 +2,7 @@ from selenium.webdriver.common.by import By
 from pages.base_page import BasePage
 
 class MultimediaPage(BasePage):
-    """Page Object de la pagina principal.
-
-    Modifica los localizadores segun tu aplicacion.
-    """
+    """Page Object de la pagina principal."""
 
     # ── Localizadores ─────────────────────────────────────────────────
     NAV_MULTIMEDIA = (By.XPATH, "//a[@href='/screens/multimedia']/parent::div")
