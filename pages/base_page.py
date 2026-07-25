@@ -10,10 +10,7 @@ from config.config import Config
 
 
 class BasePage:
-    """Clase base con metodos comunes para todas las paginas.
-
-    Todas las Page Objects deben heredar de esta clase.
-    """
+    """Clase base con metodos comunes para todas las paginas."""
 
     def __init__(self, driver):
         self.driver = driver
