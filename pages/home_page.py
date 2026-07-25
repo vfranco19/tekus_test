@@ -1,7 +1,6 @@
 from selenium.webdriver.common.by import By
 from pages.base_page import BasePage
 
-
 class HomePage(BasePage):
     """Page Object de la pagina principal.
 
@@ -11,7 +10,7 @@ class HomePage(BasePage):
     # ── Localizadores ─────────────────────────────────────────────────
     NAV_LOGIN = (By.XPATH, "//a[@href='/login']")
     NAV_CONTACT = (By.XPATH, "//a[@href='/contact_us']")
-    LOGO = (By.ID, "logo")
+    LOGO = (By.XPATH, "//div[@class='col ark-form-login-logo-content']")
 
     # ── Acciones ──────────────────────────────────────────────────────
 
