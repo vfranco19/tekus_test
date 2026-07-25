@@ -24,44 +24,23 @@ def test_multimedia_content(driver):
 
         # Validar login
         multimedia.wait_for_element(multimedia.TITLE)
-        multimedia.wait_for_element(multimedia.ELEMENTS)
 
         assert multimedia.is_element_visible(multimedia.TITLE), "Multimedia content visible"
-        collector.add_step("Multimedia", "PASS", take_screenshot(driver))
-
+        multimedia.wait_for_element(multimedia.ELEMENTS)
+        
         assert multimedia.is_element_visible(multimedia.ELEMENTS), "Multimedia elements visible"
         collector.add_step("Multimedia", "PASS", take_screenshot(driver))
+        
+        id = multimedia.get_text(multimedia.ELEMENTS_ID)
+        weight = multimedia.get_text(multimedia.ELEMENTS_WEIGHT)
+        description = multimedia.get_text(multimedia.ELEMENTS_DESCRIPTION)
+        preview_src = multimedia.get_src(multimedia.ELEMENTS_PREVIEW)
 
-        multimedia.get_text(multimedia.ELEMENTS_ID)
-        multimedia.get_text(multimedia.ELEMENTS_WEIGHT)
-        multimedia.get_text(multimedia.ELEMENTS_DESCRIPTION)
-        multimedia.get_src(multimedia.ELEMENTS_PREVIEW)
-
-        collector.add_step("Multimedia content validated", "PASS", take_screenshot(driver))
-
-        driver.implicitly_wait(10)
-        collector.end_test()
-
-    except Exception as e:
-        collector.add_step(str(e), "FAIL", take_screenshot(driver))
-        collector.end_test()
-        raise
-
-'''
-def test_login_credenciales_invalidas(driver):
-    """Ejemplo: login con credenciales incorrectas debe mostrar error."""
-    collector.start_test("Login - Credenciales Invalidas")
-    try:
-        home = HomePage(driver)
-        login = LoginPage(driver)
-
-        home.go_to_login()
-        collector.add_step("Navegar a Login", "PASS")
-
-        login.login("fake@email.com", "wrongpassword")
-
-        assert login.is_error_visible(), "Deberia mostrar mensaje de error"
-        collector.add_step("Mensaje de error visible", "PASS", take_screenshot(driver))
+        collector.add_step("ID: " + id, "PASS")
+        collector.add_step("Weight: " + weight, "PASS")
+        collector.add_step("Description: " + description, "PASS")
+        collector.add_step("Preview Src: " + preview_src, "PASS")
+        collector.add_step("Preview: <br><img class='img-preview' src='" + preview_src + "'>", "PASS")
 
         collector.end_test()
 
@@ -69,4 +48,3 @@ def test_login_credenciales_invalidas(driver):
         collector.add_step(str(e), "FAIL", take_screenshot(driver))
         collector.end_test()
         raise
-'''

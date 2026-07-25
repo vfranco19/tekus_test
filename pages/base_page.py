@@ -21,8 +21,9 @@ class BasePage:
 
     # ── Wait & Visibility ─────────────────────────────────────────────
 
-    def wait_for_element(self, locator):
+    def wait_for_element(self, locator ):
         """Espera a que un elemento sea visible y lo retorna."""
+        self.driver.implicitly_wait(3)
         return self.wait.until(EC.visibility_of_element_located(locator))
 
     def is_element_visible(self, locator):

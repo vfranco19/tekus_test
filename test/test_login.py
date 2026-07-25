@@ -35,27 +35,3 @@ def test_login_exitoso(driver):
         collector.add_step(str(e), "FAIL", take_screenshot(driver))
         collector.end_test()
         raise
-
-'''
-def test_login_credenciales_invalidas(driver):
-    """Ejemplo: login con credenciales incorrectas debe mostrar error."""
-    collector.start_test("Login - Credenciales Invalidas")
-    try:
-        home = HomePage(driver)
-        login = LoginPage(driver)
-
-        home.go_to_login()
-        collector.add_step("Navegar a Login", "PASS")
-
-        login.login("fake@email.com", "wrongpassword")
-
-        assert login.is_error_visible(), "Deberia mostrar mensaje de error"
-        collector.add_step("Mensaje de error visible", "PASS", take_screenshot(driver))
-
-        collector.end_test()
-
-    except Exception as e:
-        collector.add_step(str(e), "FAIL", take_screenshot(driver))
-        collector.end_test()
-        raise
-'''

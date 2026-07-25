@@ -10,7 +10,7 @@ class MultimediaPage(BasePage):
     # ── Localizadores ─────────────────────────────────────────────────
     NAV_MULTIMEDIA = (By.XPATH, "//a[@href='/screens/multimedia']/parent::div")
     TITLE = (By.XPATH, "//h1[text()='Multimedia']")
-    ELEMENTS = (By.XPATH, "//div[@class='ark-card ark-card-multimedia']")
+    ELEMENTS = (By.XPATH, "//div[@class='col ark-card-information-content'][1]")
     ELEMENTS_ID = (By.XPATH, "//span[@class='ark-card-content-id'][1]")
     ELEMENTS_WEIGHT = (By.XPATH, "//span[@class='ark-size-file'][1]")
     ELEMENTS_DESCRIPTION = (By.XPATH, "//a[contains(@class,'ark-card-title')][1]")

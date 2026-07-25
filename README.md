@@ -53,8 +53,6 @@ pytest
 # 7. Ejecutar un solo archivo
 pytest test/test_login.py
 
-# 8. Ejecutar por marcador
-pytest -m login
 ```
 
 ## Reportes
