@@ -5,10 +5,7 @@ from selenium.common.exceptions import TimeoutException
 from pages.base_page import BasePage
 
 class LoginPage(BasePage):
-    """Page Object de la pagina de login.
-
-    Modifica los localizadores segun tu aplicacion.
-    """
+    """Page Object de la pagina de login."""
 
     # ── Localizadores ─────────────────────────────────────────────────
     TITLE = (By.XPATH, "//h1[@class='ark-h1']")
